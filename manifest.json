@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "전자문서 AI · 지출 첨부검사",
+  "version": "0.5.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqQHd520SfoE6ETEs8GgQsyr1Mvww7K0hFO5e79elB+Z+QN36I6tJ6gaOAHZBCcVpse443+Rz97+BppttnAUPSqOG9sv4a0a8mvyUaVoLfmhe7jeJ1Jq6HsQ/mssLWgw+68MaTJ4+iqVhN56oV+yToPOTBYMQae7znJFeBSKdy97Lbt0TS8aY2Bswp3kpmMmFcgafJHNJ20XkEv74ouZA0q6mSk7nyUJCiuasADX1zhlakpjChtFjKdwv3HTBsUmc1aVuRkK/SiRaSQoNfq/jA0E8MW258sAKKdRxRG8i0mskfKLQH/kRkmTiQGUo+wqedDfeyiFWHSoVCpPwF7ospQIDAQAB",
+  "description": "전자문서 요약·검토와 지출결의 필수 첨부 및 파일 내부 내용을 로컬에서 사전 검사합니다.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "전자문서 AI · 지출 첨부검사"
+  },
+  "options_page": "options.html",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "optional_host_permissions": ["*://*/*"],
+  "host_permissions": [
+    "https://gw.tta.or.kr/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "content_scripts": [{
+    "matches": ["https://gw.tta.or.kr/*"],
+    "js": ["widget.js"],
+    "run_at": "document_idle"
+  }]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "./expense-rules.schema.json",
+  "schema_version": "1.0",
+  "ruleset": {
+    "id": "tta-expense-evidence",
+    "version": "0.1.0-draft",
+    "effective_from": null,
+    "approved_by": null
+  },
+  "expense_types": []
+}

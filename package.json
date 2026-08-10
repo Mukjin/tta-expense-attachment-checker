@@ -1,0 +1,17 @@
+{
+  "name": "edoc-expense-attachment-checker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "parser": "node parser-service.mjs",
+    "test": "node tests/expense-checker.test.mjs && node tests/expense-context.test.mjs && node tests/expense-content-checker.test.mjs && node tests/expense-ai.test.mjs && node tests/attachment-reader.test.mjs && node tests/parser-service.test.mjs"
+  },
+  "dependencies": {
+    "kordoc": "4.5.0",
+    "pdfjs-dist": "4.10.38"
+  }
+}
